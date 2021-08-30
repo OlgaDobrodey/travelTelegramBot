@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Card for city</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td id="city-id" th:text="${city.id}"/>
+        <td th:text="${city.name}"/>
+        <td th:text="${city.information}"/>
+    </tr>
+</table>
+<input th:onclick="'javascript:deleteCity('+${city.id}+')'" type="button" value="Delete"/>
+<button id="button-update-city" type="button"> Update</button>
+
+<form id="cities-form-update" name="cities-form" style="display:none">
+    <input type="text" th:field="${city.name}" id="name" required/>
+    <input type="text" th:field="${city.information}" id="information" required/>
+
+    <input th:onclick="'javascript:updateCity('+${city.id}+')'" type="button" value="Save"/>
+</form>
+
+<script type="text/javascript" th:src="@{/js/read.js}"></script>
+<script type="text/javascript" th:src="@{/js/crud.js}"></script>
+
+</body>
+</html>
