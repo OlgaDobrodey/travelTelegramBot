@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Read All</title>
+    <link rel="stylesheet" href="/bot/css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-All city information
+<h2>All city information</h2>
+
 <table>
     <tr th:each="city: ${cities}">
         <td><a th:href="'/bot/cities/'+${city.id}" th:text='${city.name}'/></td>
@@ -14,7 +16,7 @@ All city information
     </tr>
 </table>
 
-<button id="button-add-cities" type="button"> Add new city</button>
+<button class="button" id="button-add-cities" type="button"> Add new city</button>
 <form id="cities-form" name="cities-form" style="display:none">
     <hr>
     <label for="city-name" style="padding:5px 10px">City name: </label>
@@ -25,7 +27,7 @@ All city information
     <br>
     <textarea id="city-information" rows="5" cols="70" style="padding:5px 10px"></textarea>
     <br>
-    <button id="button-new-cities" type="button"> Add</button>
+    <button class="button" id="button-new-cities" type="button"> Add</button>
 </form>
 </div>
 
